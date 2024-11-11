@@ -1,14 +1,63 @@
+import streamlit as st
+
+# HTML, CSS, and JavaScript content for the app
+html_content = """
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bentley Health and Well-being App</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Bentley WellConnect</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      text-align: center;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+      max-width: 400px;
+      width: 90%;
+    }
+
+    button {
+      background-color: #005a9e;
+      color: #fff;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #004080;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .resource {
+      margin-top: 15px;
+    }
+
+    h1, h2 {
+      color: #005a9e;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
-    <h1>Welcome to Bentley Health and Well-being App</h1>
+    <h1>Welcome to Bentley WellConnect</h1>
     <p>This app will guide you to resources tailored to your well-being needs. Start the screening to begin.</p>
     <button onclick="startScreening()">Start Screening</button>
 
@@ -61,6 +110,36 @@
       </div>
     </div>
   </div>
-  <script src="script.js"></script>
+
+  <script>
+    function startScreening() {
+      document.getElementById("screening").classList.remove("hidden");
+    }
+
+    function categorizeUser() {
+      const mentalHealth = document.getElementById("mentalHealth").value;
+      const physicalHealth = document.getElementById("physicalHealth").value;
+      const assimilation = document.getElementById("assimilation").value;
+      document.getElementById("screeningForm").reset();
+      
+      if (mentalHealth === "High") {
+        displayResource("mentalResource");
+      } else if (physicalHealth === "High") {
+        displayResource("physicalResource");
+      } else if (assimilation === "Low") {
+        displayResource("assimilationResource");
+      }
+    }
+
+    function displayResource(resourceId) {
+      document.getElementById("resources").classList.remove("hidden");
+      document.getElementById(resourceId).classList.remove("hidden");
+    }
+  </script>
 </body>
 </html>
+"""
+
+# Render HTML content in Streamlit
+st.components.v1.html(html_content, height=800, scrolling=True)
+
