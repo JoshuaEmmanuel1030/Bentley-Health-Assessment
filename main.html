@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bentley Health and Well-being App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to Bentley Health and Well-being App</h1>
+    <p>This app will guide you to resources tailored to your well-being needs. Start the screening to begin.</p>
+    <button onclick="startScreening()">Start Screening</button>
+
+    <div id="screening" class="hidden">
+      <h2>Screening Questions</h2>
+      <form id="screeningForm">
+        <label>How would you describe your current mental health?</label>
+        <select id="mentalHealth">
+          <option value="">Choose one</option>
+          <option value="High">Struggling</option>
+          <option value="Medium">Somewhat Okay</option>
+          <option value="Low">Doing Well</option>
+        </select>
+
+        <label>How would you rate your physical health?</label>
+        <select id="physicalHealth">
+          <option value="">Choose one</option>
+          <option value="High">Struggling</option>
+          <option value="Medium">Somewhat Okay</option>
+          <option value="Low">Doing Well</option>
+        </select>
+
+        <label>How connected do you feel to the Bentley community?</label>
+        <select id="assimilation">
+          <option value="">Choose one</option>
+          <option value="Low">Not Very Connected</option>
+          <option value="Medium">Somewhat Connected</option>
+          <option value="High">Very Connected</option>
+        </select>
+
+        <button type="button" onclick="categorizeUser()">Submit</button>
+      </form>
+    </div>
+
+    <div id="resources" class="hidden">
+      <h2>Your Suggested Resources</h2>
+      <div id="mentalResource" class="resource hidden">
+        <p>It looks like you might benefit from mental health support.</p>
+        <button onclick="window.location.href='MENTAL_HEALTH_LINK'">Get Mental Health Support</button>
+      </div>
+      <div id="physicalResource" class="resource hidden">
+        <p>It looks like you might benefit from physical health resources.</p>
+        <button onclick="window.location.href='PHYSICAL_HEALTH_LINK'">Access Physical Health Resources</button>
+      </div>
+      <div id="assimilationResource" class="resource hidden">
+        <p>It looks like you might benefit from community connections.</p>
+        <button onclick="window.location.href='COMMUNITY_LINK1'">Bentley Student Organizations</button>
+        <button onclick="window.location.href='COMMUNITY_LINK2'">Support Groups</button>
+        <button onclick="window.location.href='COMMUNITY_LINK3'">Clubs</button>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
