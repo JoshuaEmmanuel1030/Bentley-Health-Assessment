@@ -96,11 +96,11 @@ html_content = """
       <h2>Your Suggested Resources</h2>
       <div id="mentalResource" class="resource hidden">
         <p>It looks like you might benefit from mental health support.</p>
-        <button onclick="window.location.href='MENTAL_HEALTH_LINK'">Get Mental Health Support</button>
+        <button onclick="window.location.href='https://www.bentley.edu/university-life/student-health/wellness-prevention'">Get Mental Health Support</button>
       </div>
       <div id="physicalResource" class="resource hidden">
         <p>It looks like you might benefit from physical health resources.</p>
-        <button onclick="window.location.href='PHYSICAL_HEALTH_LINK'">Access Physical Health Resources</button>
+        <button onclick="window.location.href='https://www.bentley.edu/university-life/student-health/health-center'">Access Physical Health Resources</button>
       </div>
       <div id="assimilationResource" class="resource hidden">
         <p>It looks like you might benefit from community connections.</p>
